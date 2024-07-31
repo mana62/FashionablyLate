@@ -1,0 +1,23 @@
+.container {
+    background: #fff;
+}
+
+.header {
+    margin: 0 auto;
+    padding: 20px 15px;
+    max-width: 1230px;
+}
+
+.header__inner {
+    display: flex;
+    align-items: right;
+    justify-content: space-between;
+}
+
+.header__inner:first-child {
+    text-align: center;
+}
+
+.header__logo {
+    color: #8B7969;
+}
