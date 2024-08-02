@@ -1,4 +1,5 @@
 .container {
+<<<<<<< HEAD
     background: #ffff;
 }
 
@@ -10,11 +11,33 @@
     height: 80px;
     margin: 0 auto;
     position: relative;
+=======
+    background: #fff;
+}
+
+.header {
+    margin: 0 auto;
+    padding: 20px 15px;
+    max-width: 1230px;
+}
+
+.header__inner {
+    display: flex;
+    align-items: right;
+    justify-content: space-between;
+}
+
+.header__inner:first-child {
+    text-align: center;
+>>>>>>> c5dd80d (再コミット)
 }
 
 .header__logo {
     color: #8B7969;
+<<<<<<< HEAD
     font-size: 40px;
     font-weight: bold;
     font-family: "Kiwi Maru", serif;
+=======
+>>>>>>> c5dd80d (再コミット)
 }
