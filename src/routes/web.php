@@ -32,5 +32,5 @@ Route::get('/auth/login', function(){ return view('/auth/login'); })->name('logi
 //Adminページ表示
 Route::get('/admin', [AdminController::class, 'index']);
 
-
-
+//contactページの表示
+Route::get('/', [ContactController::class, 'index']);

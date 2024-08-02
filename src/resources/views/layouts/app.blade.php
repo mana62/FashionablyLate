@@ -16,7 +16,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=M+PLUS+1:wght@100..900&family=M+PLUS+Rounded+1c&display=swap"
         rel="stylesheet">
-
     @yield('css')
     <title>FashionablyLate</title>
 </head>
