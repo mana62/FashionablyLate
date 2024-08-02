@@ -41,7 +41,7 @@
                             <th class="register-table__header">メールアドレス</th>
                             <td class="register-table__error">
                                 @error('email')
-                                    <span class="register__error">{{ $message }}</span>
+                                    <div class="register__error">{{ $message }}</div>
                             </td>
                             @enderror
                         </tr>
@@ -55,7 +55,7 @@
                             <th class="register-table__header">パスワード</th>
                             <td class="register-table__error">
                                 @error('password')
-                                    <span class="register__error">{{ $message }}</span>
+                                    <div class="register__error">{{ $message }}</div>
                             </td>
                             @enderror
                         </tr>

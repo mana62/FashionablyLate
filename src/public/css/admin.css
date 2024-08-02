@@ -1,0 +1,225 @@
+.button-login {
+    width: 200px;
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+}
+
+.button-login__submit {
+    padding: 10px 30px;
+    border: 1px solid #ede4dc;
+    border-radius: 3px;
+    cursor: pointer;
+    background: #f4f0f0;
+    font-size: 16px;
+    transition: background 0.3s, color 0.3s;
+    font-family: "Kiwi Maru", serif;
+}
+
+.button-login__submit-link {
+    text-decoration: none;
+    color: #8b7969;
+}
+
+.button-login__submit:hover {
+    background: #ccad91;
+}
+
+.admin-container {
+    width: 100%;
+    height: 700px;
+    background: #fff;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    border-top: 1px solid #ccad91;
+}
+
+.admin-ttl {
+    font-size: 20px;
+    text-align: center;
+    padding-top: 10px;
+    color: #8b7969;
+    font-family: "Kiwi Maru", serif;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 35px;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.search-content__item {
+    list-style: none;
+}
+
+.search-content__item-input {
+    padding: 60px;
+    font-family: "Kiwi Maru", serif;
+    padding: 10px;
+    box-sizing: border-box;
+    border:1px solid #ede4dc;
+    color: #8b7969;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.search-content__item:nth-child(1) .search-content__item-input {
+    width: 300px;
+}
+
+.search-content__item-select {
+    width: 100px;
+    font-family: "Kiwi Maru", serif;
+    padding: 10px;
+    box-sizing: border-box;
+    border:1px solid #ede4dc;
+    color: #8b7969;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.search-content__item:nth-child(3) .search-content__item-select {
+    width: 150px;
+}
+
+.search-button {
+    width: 100px;
+    text-align: center;
+    margin-left: 30px;
+}
+
+.search-button__submit {
+    color: #fff;
+    font-size: 18px;
+    padding: 10px;
+    width: 100%;
+    background: #8b7969;
+    border: none;
+    font-family: "Kiwi Maru", serif;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.search-button__reset {
+    color: #fff;
+    font-size: 18px;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    font-family: "Kiwi Maru", serif;
+    cursor: pointer;
+    background: #ccad91;
+    border-radius: 3px;
+}
+
+.search-button__submit:hover,
+.search-button__reset:hover {
+    background: #a58b72;
+}
+
+.container-row {
+    width: 1000px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.export {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.export-button {
+    padding: 12px;
+    background-color: #f9e9db;
+    color: #8b7969;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: "Kiwi Maru", serif;
+    font-size: 16px;
+    font-family: "Kiwi Maru", serif;
+}
+
+.export-button:hover {
+    background-color: #c7b19b;
+}
+
+.pagination {
+    /* ページネーションのスタイルは必要に応じて調整 */
+}
+
+.table {
+    margin: 0 auto;
+    text-align: center;
+    width: 1000px;
+    border-collapse: collapse;
+    border: 1px solid #ede4dc;
+    margin-top: 20px;
+    height: 600px;
+}
+
+.table-content {
+margin-left: px;
+}
+
+.table-content__items {
+    border-bottom: 1px solid #ede4dc;
+}
+
+.table-content__items-header {
+    width: 1000px;
+    padding: 20px;
+    color: #fff;
+    font-size: 18px;
+    background: #8b7969;
+    font-weight: bold;
+    font-family: "Kiwi Maru", serif;
+}
+
+.table-content__items-content {
+    padding: 20px;
+    color: #8b7969;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: "Kiwi Maru", serif;
+}
+
+.table-button {
+    display: inline-block;
+    width: 150px;
+    padding: 10px;
+}
+
+.table-button__submit {
+    font-size: 18px;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    font-family: "Kiwi Maru", serif;
+    border-radius: 3px;
+    margin-right: 20px;
+    font-weight: 400;
+    background-color: #f8ece1;
+    cursor: pointer;
+}
+
+.table-button__submit:hover {
+    background-color: #c7b19b;
+
+}
+
+.table-button__submit a {
+    text-decoration: none;
+    color: #8b7969;
+}

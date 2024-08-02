@@ -26,6 +26,11 @@
                         </tr>
                         <tr class="login-table__row">
                             <th class="login-table__header">メールアドレス</th>
+                            <td class="login-table__error">
+                                @error('email')
+                                    <div class="login__error">{{ $message }}</div>
+                            </td>
+                            @enderror
                         </tr>
                         <tr class="login-table__row">
                             <td class="login-table__item">
@@ -34,6 +39,11 @@
                         </tr>
                         <tr class="login-table__row">
                             <th class="login-table__header">パスワード</th>
+                            <td class="login-table__error">
+                                @error('password')
+                                    <div class="login__error">{{ $message }}</div>
+                            </td>
+                            @enderror
                         </tr>
                         <tr class="login-table__row">
                             <td class="login-table__item">
