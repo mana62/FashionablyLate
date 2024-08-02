@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MyRegisterController;
 
 use Illuminate\Support\Facades\Route;
@@ -20,13 +21,16 @@ use App\Http\Controllers\UserController;
 */
 
 
-// 新規登録ページ
-Route::get('/auth/register', [MyRegisterController::class, 'index'])->name('register');
+// 新規登録ページ、ミドルウェア設定
+//Route::middleware('auth')->group(function () {
+    Route::get('/auth/register', [MyRegisterController::class, 'index'])->name('register');//});
 Route::post('/auth/register', [MyRegisterController::class, 'register']);
 
 // ログインページ
 Route::get('/auth/login', function(){ return view('/auth/login'); })->name('login');
 
-//ミドルウェア(認証されたユーザーがアクセスするページ)
-//Route::middleware('auth')->group(function () {Route::get('/admin', [HomeController::class, 'index'])->name('home'); });
+//Adminページ表示
+Route::get('/admin', [AdminController::class, 'index']);
+
+
 

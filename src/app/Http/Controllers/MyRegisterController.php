@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Http\Requests\AuthorRequest;
+use App\Http\Requests\MyRegisterRequest;
 use Illuminate\Support\Facades\Hash;
 
 class MyRegisterController extends Controller
@@ -14,7 +14,7 @@ class MyRegisterController extends Controller
         return view('auth.register');
     }
 
-    public function register(AuthorRequest $request)
+    public function register(MyRegisterRequest $request)
     {
         $user = $this->create($request->all());
         return redirect()->route('login');
