@@ -7,47 +7,48 @@
 @section('content')
     <div class="contact-container">
         <div class="contact-ttl">
-            <h2>contact</h2>
+            <h2>Contact</h2>
         </div>
 
         <div class="container">
-            <form class="form" name="contact" method="post">
+            <form class="form" action="/confirm" name="contact" method="post">
                 <div class="form__items">
-                    <p class="form__item">お名前 ※</p>
-                    <input class="form__item-input" type="text" name="firstname" placeholder="例 山田">
-                    <input class="form__item-input" type="text" name="lastname" placeholder="例 太郎">
+                    <p class="form__item">お名前 <span class="required">※</span></p>
+                    <input class="form__item-input" type="text" name="firstname" placeholder="例  山田">
+                    <input class="form__item-input" type="text" name="lastname" placeholder="例  太郎">
                 </div>
                 <div class="form__items">
-                    <p class="form__item">性別 ※</p>
-                    <input class="form__item-input" type="radio" name="gender" value="男性">
+                    <p class="form__item">性別 <span class="required">※</span></p>
+                    <input class="form__item-input--radio" type="radio" name="gender" value="男性" checked>
                     <span class="form__item-span">男性</span>
-                    <input class="form__item-input" type="radio" name="gender" value="女性">
+                    <input class="form__item-input--radio" type="radio" name="gender" value="女性">
                     <span class="form__item-span">女性</span>
-                    <input class="form__item-input" type="radio" name="gender" value="その他">
+                    <input class="form__item-input--radio" type="radio" name="gender" value="その他">
                     <span class="form__item-span">その他</span>
                 </div>
                 <div class="form__items">
-                    <p class="form__item">メールアドレス ※</p>
-                    <input class="form__item-input" type="text" name="emain" placeholder="例 test@example.com">
+                    <p class="form__item">メールアドレス <span class="required">※</span></p>
+                    <input class="form__item-input" type="text" name="emain" placeholder="例  test@example.com">
                 </div>
                 <div class="form__items">
-                    <p class="form__item">電話番号 ※</p>
-                    <input class="form__item-input" type="text" name="tell" placeholder="例 080"><span> - </span>
-                    <input class="form__item-input" type="text" name="tell" placeholder="例 1234"><span> - </span>
-                    <input class="form__item-input" type="text" name="tell" placeholder="例 5678"><span>
+                    <p class="form__item">電話番号 <span class="required">※</span></p>
+                    <input class="form__item-input" type="text" name="tell" placeholder="例  080"><span class="hyphen">-</span>
+                    <input class="form__item-input" type="text" name="tell" placeholder="例  1234"><span class="hyphen">-</span>
+                    <input class="form__item-input" type="text" name="tell" placeholder="例  5678">
                 </div>
                 <div class="form__items">
-                    <p class="form__item">住所 ※</p>
-                    <input class="form__item-input" type="text" name="adress" placeholder="例 東京都世田谷区千駄ヶ谷1-2-3">
+                    <p class="form__item">住所 <span class="required">※</span></p>
+                    <input class="form__item-input" type="text" name="adress" placeholder="例  東京都世田谷区千駄ヶ谷1-2-3">
                 </div>
                 <div class="form__items">
                     <p class="form__item">建物名</p>
-                    <input class="form__item-input" type="text" name="building" placeholder="例 千駄ヶ谷マンション101">
+                    <input class="form__item-input" type="text" name="building" placeholder="例  千駄ヶ谷マンション101">
                 </div>
                 <div class="form__items">
-                    <p class="form__item">お問い合わせ種類</p>
+                    <p class="form__item">お問い合わせ種類 <span class="required">※</span></p>
+                    <div class="custom-button-select">
                     <select class="form__item-select" name="category">
-                        <option class="form__item-select-option" value="">お問合せの種類</option>
+                        <option class="form__item-select-option" value="" disabled selected>選択してください</option>
                         <option class="form__item-select-option" value="">商品のお届けについて</option>
                         <option class="form__item-select-option" value="">商品の交換について</option>
                         <option class="form__item-select-option" value="">商品トラブル</option>
@@ -55,11 +56,12 @@
                         <option class="form__item-select-option" value="">その他</option>
                     </select>
                 </div>
-                <div class="form__items">
-                    <p class="form__item">お問い合わせ内容 ※</p>
-                    <textarea name="textarea" class="form-item-textarea" placeholder="お問い合わせの内容を記載してください"></textarea>
                 </div>
                 <div class="form__items">
+                    <p class="form__item">お問い合わせ内容 <span class="required">※</span></p>
+                    <textarea name="textarea" class="form-item-textarea" placeholder="お問い合わせの内容を記載してください"></textarea>
+                </div>
+                <div class="form__button">
                     <button class="form__item-submit" type="submit">確認画面</button>
                 </div>
         </div>

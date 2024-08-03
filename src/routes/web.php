@@ -29,8 +29,14 @@ Route::post('/auth/register', [MyRegisterController::class, 'register']);
 // ログインページ
 Route::get('/auth/login', function(){ return view('/auth/login'); })->name('login');
 
-//Adminページ表示
+//管理者ページ表示
 Route::get('/admin', [AdminController::class, 'index']);
 
-//contactページの表示
-Route::get('/', [ContactController::class, 'index']);
+//お問い合わせページの表示
+Route::get('/', [ContactController::class, 'index'])->name('index');
+
+//確認画面の表示
+Route::get('/confirm', [ContactController::class, 'confirm']);
+
+//thanksページの表示
+Route::get('/thanks', [ContactController::class, 'thanks']);
