@@ -27,25 +27,31 @@
                                 placeholder="名前またはメールアドレスを入力してください">
                         </li>
                         <li class="search-content__item">
+                            <div class="custom-button-select">
                             <select class="search-content__item-select" name="gender">
-                                <option class="search-content__item-option" value="">性別</option>
+                                <option class="search__item-select-option" value="placeholder" style="display:none;">性別</option>
                                 <option class="search-content__item-option" value="male">男性</option>
                                 <option class="search-content__item-option" value="female">女性</option>
                                 <option class="search-content__item-option" value="other">その他</option>
                             </select>
+                        </div>
                         </li>
                         <li class="search-content__item">
+                            <div class="custom-button-select">
                             <select class="search-content__item-select" name="category">
-                                <option class="search-content__item-option" value="">お問合せの種類</option>
+                                <option class="search-content__item-option" value="placeholder" style="display:none;">お問い合せの種類</option>
                                 <option class="search-content__item-option" value="">商品のお届けについて</option>
                                 <option class="search-content__item-option" value="">商品の交換について</option>
                                 <option class="search-content__item-option" value="">商品トラブル</option>
                                 <option class="search-content__item-option" value="">ショップへのお問い合わせ</option>
                                 <option class="search-content__item-option" value="">その他</option>
                             </select>
+                        </div>
                         </li>
                         <li class="search-content__item">
+                            <div class="custom-button-select">
                             <input class="search-content__item-input" type="date" name="date">
+                            </div>
                         </li>
                 </ul>
                 <div class="search-button">
