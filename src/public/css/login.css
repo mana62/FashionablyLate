@@ -37,7 +37,7 @@
 .login-ttl {
     font-size: 20px;
     text-align: center;
-    padding-top: 10px;
+    padding-top: 20px;
     color: #8b7969;
     font-family: "Kiwi Maru", serif;
 }
@@ -54,7 +54,7 @@
 .login-table__container {
     background-color: #fff;
     border: 1px solid #8b7969;
-    padding: 60px;
+    padding: 10px;
     border-radius: 8px;
 }
 
@@ -70,13 +70,16 @@
 }
 
 .login-table__header {
+    width: 300px;
     font-size: 20px;
     font-weight: 400;
     color: #8b7969;
-    padding-left: 15%;
+    padding-left: 10%;
     vertical-align: auto;
     text-align: left;
     font-family: "M PLUS 1", sans-serif;
+    margin-top: 20px;
+    line-height: 2;
 }
 
 .login__error {
@@ -84,8 +87,11 @@
     font-family: "M PLUS 1", sans-serif;
     font-size: 15px;
     list-style:none;
-    margin-left: 30px;
+    white-space: nowrap;
+    margin-right: 10px;
+    margin-top: 15px;
 }
+
 
 .login-table__item {
     text-align: center;
@@ -94,20 +100,19 @@
 
 .login-table__item-input {
     padding: 15px;
-    width: 70%;
+    width: 80%;
     border-radius: 3px;
     border: none;
     background: #f4f4f4;
     color: #8b7969;
     box-sizing: border-box;
-    margin-bottom: 20px;
     font-family: "M PLUS 1", sans-serif;
     font-size: 15px;
 }
 
 .login-table__button {
     text-align: center;
-    margin-top: 25px;
+    margin: 40px;
 }
 
 .login-table__button-submit {

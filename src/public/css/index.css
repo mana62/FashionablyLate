@@ -17,14 +17,22 @@
 .container {
     margin: 0 auto;
     text-align: left;
-    max-width: 700px;
+    max-width: 800px;
     background-color: #fff;
+}
+
+.form-error {
+    color: #ff0000;
+    font-size: 14px;
+    font-family: "Kiwi Maru", serif;
+    white-space: nowrap;
+    margin-right: 5px;
 }
 
 .form__items {
     width: 100%;
     display: flex;
-    justify-content: flex-start;
+    flex-direction: row;
     align-items: center;
     line-height: 1.5;
     text-align: left;
@@ -60,7 +68,7 @@
 
 .custom-button-select {
     position: relative;
-    width: 250px;
+    width: 350px;
     background: #e5e5e5;
     height: 40px;
     border-radius: 3px;
@@ -100,14 +108,7 @@
     cursor: pointer;
 }
 
-.hyphen {
-    padding: 0 5px;
-    color: #8b7969;
-    font-family: "Kiwi Maru", serif;
-}
-
 .form__item-input--radio {
-    width: auto;
     margin-left: 5px;
     accent-color: #8b7969;
     inline-size: 1rem;
@@ -136,12 +137,12 @@
     min-width: 250px;
 }
 
-.form__button {
+.form-button {
     text-align: center;
-    padding: 10px;
+    margin-bottom: 20px;
 }
 
-.form__item-submit {
+.form-button__submit {
     padding: 10px 30px;
     background-color: #8b7969;
     color: #fff;
@@ -151,8 +152,9 @@
     margin-top: 20px;
     font-size: 16px;
     font-family: "Kiwi Maru", serif;
+    text-decoration: none;
 }
 
-.form__item-submit:hover {
+.form-button__submit:hover {
     background-color: #c7b19b;
 }

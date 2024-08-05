@@ -1,0 +1,85 @@
+.confirm-container {
+    width: 100%;
+    height: 700px;
+    background-color: #fff;
+    border-radius: 3px;
+}
+
+.confirm-ttl {
+    font-size: 20px;
+    text-align: center;
+    padding-top: 5px;
+    color: #8b7969;
+    font-family: "Kiwi Maru", serif;
+    border-top: 1px solid #ccad91;
+}
+
+.table {
+    padding-top: 30px;
+}
+
+.table-content {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+    height: 550px;
+}
+
+.table-content__items {
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.table-content__items-header {
+    width: 270px;
+    padding-left: 40px;
+    color: #fff;
+    background: #baa18b;
+    font-size: 18px;
+    font-family: "Kiwi Maru", serif;
+}
+
+.table-content__items-content {
+    padding-left: 40px;
+    color: #8b7969;
+    background: #fff;
+    font-size: 18px;
+    font-family: "Kiwi Maru", serif;
+}
+
+.confirm-table__button {
+    text-align: center;
+    padding: 40px;
+}
+
+.confirm-table__button-submit {
+    padding: 10px 30px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #baa18b;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-family: "M PLUS 1", sans-serif;
+    margin-right: 8px;
+}
+
+.confirm-table__button-submit:hover {
+    background-color: #ccad91;
+}
+
+.confirm-link {
+    width: auto;
+    font-size: 16px;
+    cursor: pointer;
+    color: #8b7969;
+    font-family: "M PLUS 1", sans-serif;
+    margin-left: 8px;
+    text-decoration: none;
+    border-bottom: 1px solid #baa18b;
+}
+
+.confirm-link:hover {
+    background-color: #ccad91;
+}

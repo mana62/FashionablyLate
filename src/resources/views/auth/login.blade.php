@@ -26,18 +26,30 @@
                         </tr>
                         <tr class="login-table__row">
                             <th class="login-table__header">メールアドレス</th>
+                            @error('email')
+                                <td class="login-table__error">
+                                    <div class="login__error">{{ $message }}</div>
+                                </td>
+                            @enderror
                         </tr>
                         <tr class="login-table__row">
                             <td class="login-table__item">
-                                <input class="login-table__item-input" type="email" name="email" placeholder="例 : test@example.com" value="{{ old('email') }}" />
+                                <input class="login-table__item-input" type="email" name="email"
+                                    placeholder="例 : test@example.com" value="{{ old('email') }}" />
                             </td>
                         </tr>
                         <tr class="login-table__row">
                             <th class="login-table__header">パスワード</th>
+                            @error('password')
+                                <td class="login-table__error">
+                                    <div class="login__error">{{ $message }}</div>
+                                </td>
+                            @enderror
                         </tr>
                         <tr class="login-table__row">
                             <td class="login-table__item">
-                                <input class="login-table__item-input" type="password" name="password" placeholder="例 : coachtech1106" />
+                                <input class="login-table__item-input" type="password" name="password"
+                                    placeholder="例 : coachtech1106" />
                             </td>
                         </tr>
                     </table>

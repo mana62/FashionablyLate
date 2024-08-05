@@ -68,7 +68,7 @@
                         <tr class="register-table__row">
                             <th class="register-table__header">パスワード確認</th>
                             <td class="register-table__error">
-                                @error('password')
+                                @error('password_confirmation')
                                     <span class="register__error">{{ $message }}</span>
                             </td>
                             @enderror
