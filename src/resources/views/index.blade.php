@@ -11,59 +11,94 @@
         </div>
 
         <div class="container">
-            <form class="form" action="/confirm" name="contact" method="post">
+            <form class="form" action="{{ route('confirm') }}" method="post">
+                @csrf
                 <div class="form__items">
                     <p class="form__item">お名前 <span class="required">※</span></p>
-                    <input class="form__item-input" type="text" name="firstname" placeholder="例  山田">
-                    <input class="form__item-input" type="text" name="lastname" placeholder="例  太郎">
+                    @error('last_name')
+                        <div class="form-error">{{ $message }}</div>
+                        @enderror
+                    <input class="form__item-input" type="text" name="last_name" placeholder="例 山田" value="{{ old('last_name') }}" />
+                    @error('first_name')
+                        <div class="form-error">{{ $message }}</div>
+                    @enderror
+                    <input class="form__item-input" type="text" name="first_name" placeholder="例  太郎" value="{{ old('first_name') }}" />
                 </div>
+
                 <div class="form__items">
                     <p class="form__item">性別 <span class="required">※</span></p>
-                    <input class="form__item-input--radio" type="radio" name="gender" value="男性" checked>
+                    @error('gender')
+                    <div class="form-error">{{ $message }}</div>
+                    @enderror
+                    <input class="form__item-input--radio" type="radio" name="gender" value="男性" {{ (old('gender') == '男性' || old('gender') == null) ? 'checked' : '' }} />
                     <span class="form__item-span">男性</span>
-                    <input class="form__item-input--radio" type="radio" name="gender" value="女性">
+                    <input class="form__item-input--radio" type="radio" name="gender" value="女性" {{ old('gender') == '女性' ? 'checked' : '' }} />
                     <span class="form__item-span">女性</span>
-                    <input class="form__item-input--radio" type="radio" name="gender" value="その他">
+                    <input class="form__item-input--radio" type="radio" name="gender" value="その他" {{ old('gender') == 'その他' ? 'checked' : '' }} />
                     <span class="form__item-span">その他</span>
                 </div>
+
                 <div class="form__items">
                     <p class="form__item">メールアドレス <span class="required">※</span></p>
-                    <input class="form__item-input" type="text" name="emain" placeholder="例  test@example.com">
+                    @error('email')
+                        <div class="form-error">{{ $message }}</div>
+                    @enderror
+                    <input class="form__item-input" type="text" name="email" placeholder="例  test@example.com" value="{{ old('email') }}" />
                 </div>
+
                 <div class="form__items">
                     <p class="form__item">電話番号 <span class="required">※</span></p>
-                    <input class="form__item-input" type="text" name="tell" placeholder="例  080"><span class="hyphen">-</span>
-                    <input class="form__item-input" type="text" name="tell" placeholder="例  1234"><span class="hyphen">-</span>
-                    <input class="form__item-input" type="text" name="tell" placeholder="例  5678">
+                    @error('tell')
+                        <div class="form-error">{{ $message }}</div>
+                    @enderror
+                    <input class="form__item-input" type="text" name="tell" placeholder="例  08012345678" value="{{ old('tell') }}" />
                 </div>
+
                 <div class="form__items">
                     <p class="form__item">住所 <span class="required">※</span></p>
-                    <input class="form__item-input" type="text" name="adress" placeholder="例  東京都世田谷区千駄ヶ谷1-2-3">
+                    @error('address')
+                        <div class="form-error">{{ $message }}</div>
+                    @enderror
+                    <input class="form__item-input" type="text" name="address" placeholder="例  東京都世田谷区千駄ヶ谷1-2-3" value="{{ old('address') }}" />
                 </div>
+
                 <div class="form__items">
                     <p class="form__item">建物名</p>
-                    <input class="form__item-input" type="text" name="building" placeholder="例  千駄ヶ谷マンション101">
+                    @error('building')
+                        <div class="form-error">{{ $message }}</div>
+                    @enderror
+                    <input class="form__item-input" type="text" name="building" placeholder="例  世田谷マンション101" value="{{ old('building') }}" />
                 </div>
+
                 <div class="form__items">
-                    <p class="form__item">お問い合わせ種類 <span class="required">※</span></p>
+                    <p class="form__item">お問い合わせの種類<span class="required">※</span></p>
+                    @error('category')
+                        <div class="form-error">{{ $message }}</div>
+                    @enderror
                     <div class="custom-button-select">
-                    <select class="form__item-select" name="category">
-                        <option class="form__item-select-option" value="" disabled selected>選択してください</option>
-                        <option class="form__item-select-option" value="">商品のお届けについて</option>
-                        <option class="form__item-select-option" value="">商品の交換について</option>
-                        <option class="form__item-select-option" value="">商品トラブル</option>
-                        <option class="form__item-select-option" value="">ショップへのお問い合わせ</option>
-                        <option class="form__item-select-option" value="">その他</option>
-                    </select>
+                        <select class="form__item-select" name="category">
+                            <option class="form__item-select-option" value="" disabled selected>選択してください</option>
+                            <option class="form__item-select-option" value="商品のお届けについて" {{ old('category') == '商品のお届けについて' ? 'selected' : '' }}>商品のお届けについて</option>
+                            <option class="form__item-select-option" value="商品の交換について" {{ old('category') == '商品の交換について' ? 'selected' : '' }}>商品の交換について</option>
+                            <option class="form__item-select-option" value="商品トラブル" {{ old('category') == '商品トラブル' ? 'selected' : '' }}>商品トラブル</option>
+                            <option class="form__item-select-option" value="ショップへのお問い合わせ" {{ old('category') == 'ショップへのお問い合わせ' ? 'selected' : '' }}>ショップへのお問い合わせ</option>
+                            <option class="form__item-select-option" value="その他" {{ old('category') == 'その他' ? 'selected' : '' }}>その他</option>
+                        </select>
+                    </div>
                 </div>
-                </div>
+
                 <div class="form__items">
                     <p class="form__item">お問い合わせ内容 <span class="required">※</span></p>
-                    <textarea name="textarea" class="form-item-textarea" placeholder="お問い合わせの内容を記載してください"></textarea>
+                    @error('detail')
+                        <div class="form-error">{{ $message }}</div>
+                    @enderror
+                    <textarea name="detail" class="form-item-textarea" placeholder="お問い合わせの内容を記載してください">{{ old('detail') }}</textarea>
                 </div>
-                <div class="form__button">
-                    <button class="form__item-submit" type="submit">確認画面</button>
+
+                <div class="form-button">
+                    <button class="form-button__submit" type="submit">確認画面</button>
                 </div>
+            </form>
         </div>
     </div>
-    @endsection
+@endsection

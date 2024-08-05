@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use HasFactory;
+    protected $table = 'categories';
+
+    public function contacts()
+    {
+        return $this->hasMany(Contact::class, 'category_id');
+    }
 }
