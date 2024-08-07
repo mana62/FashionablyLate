@@ -68,7 +68,7 @@
 
 .search-content__item-input {
     width: 100%;
-    padding: 10px;
+    padding: 11px;
     box-sizing: border-box;
     font-family: "Kiwi Maru", serif;
     box-sizing: border-box;
@@ -77,18 +77,13 @@
     border-radius: 3px;
 }
 
-.search-content__item:nth-child(1) .search-content__item-input {
-    width: 300px;
-    margin-left: 10px;
-}
-
-.search-content__item:nth-child(3) .search-content__item-select {
-    width: 250px;
+.search-content__item--name {
+    width: 400px;
 }
 
 .search-content__item-select {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     box-sizing: border-box;
     font-family: "Kiwi Maru", serif;
     border: 1px solid #ede4dc;
@@ -98,6 +93,10 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     background-color: transparent;
+}
+
+.search-content--category {
+    width: 250px;
 }
 
 .custom-button-select {
@@ -124,11 +123,30 @@
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
-    display: block;
+    display: none; /* カレンダーのアイコンを非表示 */
+}
+
+.custom-date-input {
+    position: relative;
+    display: inline-block;
+}
+
+.custom-date-input input [type="date"] {
+    width: 100%;
+}
+
+.custom-calendar__button {
+    color: rgba(139, 121, 105, 0.7);
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 19.5%;
+    right: 23%;
 }
 
 .search-button {
-    width: 200px;
+    width: 100px;
     text-align: center;
 }
 
@@ -143,7 +161,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     cursor: pointer;
     border-radius: 3px;
     margin-left: 50px;
-    margin-top: 15px;
 }
 
 .search-button__reset {
@@ -157,7 +174,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     background: #ccad91;
     border-radius: 3px;
     margin-left: 80px;
-    margin-top: 15px;
 }
 
 .search-button__submit:hover,
@@ -170,7 +186,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     justify-content: space-between;
     align-items: center;
     margin: 20px 0;
-    width: 90%;
+    width: 92%;
     margin: 0 auto;
 }
 
@@ -206,7 +222,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    padding: 8px 12px;
+    padding: 8px 10px;
     text-decoration: none;
     color: #8b7969;
     font-size: 14px;
@@ -227,7 +243,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .table {
-    width: 90%;
+    width: 92%;
     border-collapse: collapse;
     margin: 0 auto;
     border: 1px solid #ede4dc;
@@ -242,7 +258,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .table-content__items-header {
-    padding: 15px;
+    padding: 20px;
     color: #fff;
     font-size: 18px;
     background: #8b7969;
@@ -251,6 +267,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     letter-spacing: 1px;
     text-align: center;
     white-space: nowrap;
+    border-left: 1px solid #ede4dc;
 }
 
 .table-content__items-content {
@@ -260,13 +277,16 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     font-weight: 400;
     font-family: "Kiwi Maru", serif;
     text-align: center;
+    border-left: 1px solid #ede4dc;
+    border-right: 1px solid #ede4dc;
 }
 
-.table-link {
+.table-button {
     width: 200px;
+    text-align: center;
 }
 
-.table-link__a {
+.table-button__modal {
     text-decoration: none;
     color: #fff;
     cursor: pointer;
@@ -275,9 +295,45 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     border: 1px solid #ede4dc;
     border-radius: 3px;
     font-family: "Kiwi Maru", serif;
-    margin-left: 50px;
+    text-decoration: none;
 }
 
-.table-link__a:hover {
+.table-button__modal:hover {
     background-color: #c7b19b;
+}
+
+.modal-content {
+    background-color: #fff;
+}
+
+.modal-header {
+    margin: 0 auto;
+}
+
+.modal-header-ttl {
+    text-align: center;
+    color: #8b7969;
+    font-family: "Kiwi Maru", serif;
+    font-size: 40px;
+}
+
+.modal-body {
+    text-align: center;
+    color: #8b7969;
+    font-family: "Kiwi Maru", serif;
+    line-height: 2;
+    font-size: 26px;
+}
+
+.modal-footer {
+    margin: 0 auto;
+}
+
+.button-delete {
+    padding: 10px 30px;
+    font-family: "Kiwi Maru", serif;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #fa4c4c;
 }

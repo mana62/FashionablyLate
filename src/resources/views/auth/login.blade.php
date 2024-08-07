@@ -7,7 +7,7 @@
 @section('button')
     <div class="button-register">
         <button class="button-register__submit" type="submit">
-            <a class="button-register__submit-link" href="{{ route('register') }}">Register</a>
+            <a class="button-register__submit-link" href="{{ route('auth.register') }}">Register</a>
         </button>
     </div>
 @endsection
@@ -19,7 +19,7 @@
         </div>
 
         <div class="login-table">
-            <form class="login-table__form" action="{{ route('login') }}" method="post">
+            <form class="login-table__form" action="{{ route('auth.login') }}" method="post">
                 @csrf
                 <div class="login-table__container">
                     <table class="login-table__inner">
