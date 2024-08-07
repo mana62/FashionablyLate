@@ -76,7 +76,7 @@ class AdminController extends Controller
                 });
         })
             ->orWhere(function ($query) use ($input) {
-                $query
+                $query //完全一致
                     ->where('first_name', $input)
                     ->orWhere('last_name', $input)
                     ->orWhere('email', $input);

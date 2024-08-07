@@ -25,7 +25,7 @@ class MyContactController extends Controller
 
     public function store(MyContactRequest $request)
     {
-        $contact = $request->session()->get('contact'); // セッションからデータを取得
+        $contact = $request->session()->get('contact'); //session()->getセッションからデータを取得
         Contact::create($contact);
         return redirect()->route('thanks');
     }
