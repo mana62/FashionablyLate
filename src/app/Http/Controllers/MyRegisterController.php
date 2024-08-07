@@ -18,8 +18,8 @@ class MyRegisterController extends Controller
 
     public function register(MyRegisterRequest $request)
     {
-        $user = $this->create($request->validated()); //$request->validated()バリデーションを通過したデータのみ取得
-        return redirect()->route('login');//message ->with('success', '登録が完了しました。ログインしてください。');
+        $user = $this->create($request->validated()); // バリデーションを通過したデータのみ取得
+        return redirect()->route('auth.login');
     }
 
     public function create(array $data)
@@ -30,6 +30,7 @@ class MyRegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+
     public function show()
     {
         return view('auth.login');
@@ -48,3 +49,6 @@ class MyRegisterController extends Controller
 //withErrors(): 認証失敗時にカスタムエラーメッセージを設定
 //withInput(): フォームの再送信時に、ユーザーが入力したデータを保持
 //Auth::attempt() は、提供された認証情報（メールアドレスとパスワード）が正しいかどうかを確認し、ユーザーをログインさせる
+
+
+

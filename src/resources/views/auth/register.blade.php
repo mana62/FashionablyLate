@@ -7,7 +7,7 @@
 @section('button')
     <div class="button-login">
         <button class="button-login__submit" type="submit">
-            <a class="button-login__submit-link" href="{{ route('login') }}">Login</a>
+            <a class="button-login__submit-link" href="{{ route('auth.login') }}">Login</a>
         </button>
     </div>
 @endsection
@@ -19,17 +19,17 @@
         </div>
 
         <div class="register-table">
-            <form class="register-table__form" action="{{ route('register') }}" method="post">
+            <form class="register-table__form" action="{{ route('auth.register') }}" method="post">
                 @csrf
                 <div class="register-table__container">
                     <table class="register-table__inner">
                         <tr class="register-table__row">
                             <th class="register-table__header">お名前</th>
                             @error('name')
-                            <td class="register-table__error">
-                                <div class="register__error">{{ $message }}</div>
-                    </td>
-                    @enderror
+                                <td class="register-table__error">
+                                    <div class="register__error">{{ $message }}</div>
+                                </td>
+                            @enderror
                         </tr>
                         <tr class="register-table__row">
                             <td class="register-table__item">
@@ -42,7 +42,7 @@
                             <td class="register-table__error">
                                 @error('email')
                                     <div class="register__error">{{ $message }}</div>
-                            </td>
+                                </td>
                             @enderror
                         </tr>
                         <tr class="register-table__row">
@@ -56,7 +56,7 @@
                             <td class="register-table__error">
                                 @error('password')
                                     <div class="register__error">{{ $message }}</div>
-                            </td>
+                                </td>
                             @enderror
                         </tr>
                         <tr class="register-table__row">
@@ -70,12 +70,13 @@
                             <td class="register-table__error">
                                 @error('password_confirmation')
                                     <span class="register__error">{{ $message }}</span>
-                            </td>
+                                </td>
                             @enderror
                         </tr>
                         <tr class="register-table__row">
                             <td class="register-table__item">
-                                <input class="register-table__item-input" type="password" name="password_confirmation" placeholder="例 : coachtech1106" />
+                                <input class="register-table__item-input" type="password" name="password_confirmation"
+                                    placeholder="例 : coachtech1106" />
                             </td>
                         </tr>
                     </table>
