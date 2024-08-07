@@ -29,7 +29,7 @@
 ・Laravel:8
 
 ## ER 図
-src/public/img/ER.png
+![ER図](https://github.com/user-attachments/assets/93eb84e5-52a4-4384-9004-8963efb2ded8)
 
 ## URL
 
