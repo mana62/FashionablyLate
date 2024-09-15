@@ -8,6 +8,7 @@
 
 .button-login__submit {
     padding: 10px 30px;
+    margin-left: 80px;
     border: 1px solid #ede4dc;
     border-radius: 3px;
     cursor: pointer;
@@ -141,8 +142,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     border: none;
     cursor: pointer;
     position: absolute;
-    top: 19.5%;
-    right: 23%;
+    top: 22.5%;
+    right: 24%;
 }
 
 .search-button {

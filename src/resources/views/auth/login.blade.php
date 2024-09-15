@@ -7,7 +7,7 @@
 @section('button')
     <div class="button-register">
         <button class="button-register__submit" type="submit">
-            <a class="button-register__submit-link" href="{{ route('auth.register') }}">Register</a>
+            <a class="button-register__submit-link" href="{{ route('register') }}">Register</a>
         </button>
     </div>
 @endsection

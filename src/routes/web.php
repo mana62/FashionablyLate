@@ -42,7 +42,10 @@ Route::delete('/admin/contacts/{id}', [AdminController::class, 'destroy'])->name
 //お問い合わせページの表示
 Route::get('/', [MyContactController::class, 'index'])->name('index');
 
-//確認画面の表示
+//確認画面の表示（GET）
+Route::get('/confirm', [MyContactController::class, 'showConfirm'])->name('confirm.show');
+
+//確認画面の表示（POST - フォームから送信されたデータの確認）
 Route::post('/confirm', [MyContactController::class, 'confirm'])->name('confirm');
 
 //データの保存
