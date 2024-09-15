@@ -15,6 +15,8 @@ class ContactFactory extends Factory
     protected $model = Contact::class;
     public function definition()
     {
+
+
         return [
             'category_id' => $this->faker->numberBetween(1, 5),
             'first_name' => $this->faker->firstName(),

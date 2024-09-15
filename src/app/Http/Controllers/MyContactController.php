@@ -17,17 +17,25 @@ class MyContactController extends Controller
 
     public function confirm(MyContactRequest $request)
     {
-        $contact = $request->only(['first_name', 'last_name', 'gender', 'email', 'tell', 'address', 'building', 'category_id', 'detail']);
-        $request->session()->put('contact', $contact); //session()->putデータ保存
+        $contact = $request->all();
+        $request->session()->put('contact', $contact); // セッションにデータを保存
         return view('confirm', compact('contact'));
+    }
 
+    public function showConfirm(Request $request)
+    {
+        // セッションからデータを取得
+        $contact = $request->session()->get('contact');
+
+        // 確認画面を表示
+        return view('thanks', ['contact' => $contact]);
     }
 
     public function store(MyContactRequest $request)
     {
-        $contact = $request->session()->get('contact'); //session()->getセッションからデータを取得
-        Contact::create($contact);
-        return redirect()->route('thanks');
+        $contact = $request->session()->get('contact'); // セッションからデータを取得
+        Contact::create($contact); // データベースに保存
+        return redirect()->route('thanks'); // Thanksページにリダイレクト
     }
 
     public function show()
@@ -35,4 +43,3 @@ class MyContactController extends Controller
         return view('thanks');
     }
 }
-

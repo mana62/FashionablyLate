@@ -87,18 +87,26 @@
                     <div class="custom-button-select">
                         <select class="form__item-select" name="category_id">
                             <option class="form__item-select-option" value="" disabled selected>選択してください</option>
-                            @foreach ($categories as $category)
-                                <option class="form__item-select-option" value="{{ $category->content }}"
-                                    {{ old('category') == '商品のお届けについて' ? 'selected' : '' }}>商品のお届けについて</option>
-                                <option class="form__item-select-option" value="{{ $category->content }}"
-                                    {{ old('category') == '商品の交換について' ? 'selected' : '' }}>商品の交換について</option>
-                                <option class="form__item-select-option" value="{{ $category->content }}"
-                                    {{ old('category') == '商品トラブル' ? 'selected' : '' }}>商品トラブル</option>
-                                <option class="form__item-select-option" value="{{ $category->content }}"
-                                    {{ old('category') == 'ショップへのお問い合わせ' ? 'selected' : '' }}>ショップへのお問い合わせ</option>
-                                <option class="form__item-select-option" value="{{ $category->content }}"
-                                    {{ old('category') == 'その他' ? 'selected' : '' }}>その他</option>
-                            @endforeach
+                            <option class="form__item-select-option" value="商品のお届けについて" 
+                                {{ old('category_id', session('contact.category_id', '')) == '商品のお届けについて' ? 'selected' : '' }}>
+                                商品のお届けについて
+                            </option>
+                            <option class="form__item-select-option" value="商品の交換について" 
+                                {{ old('category_id', session('contact.category_id', '')) == '商品の交換について' ? 'selected' : '' }}>
+                                商品の交換について
+                            </option>
+                            <option class="form__item-select-option" value="商品トラブル" 
+                                {{ old('category_id', session('contact.category_id', '')) == '商品トラブル' ? 'selected' : '' }}>
+                                商品トラブル
+                            </option>
+                            <option class="form__item-select-option" value="ショップへのお問い合わせ" 
+                                {{ old('category_id', session('contact.category_id', '')) == 'ショップへのお問い合わせ' ? 'selected' : '' }}>
+                                ショップへのお問い合わせ
+                            </option>
+                            <option class="form__item-select-option" value="その他" 
+                                {{ old('category_id', session('contact.category_id', '')) == 'その他' ? 'selected' : '' }}>
+                                その他
+                            </option>
                         </select>
                     </div>
                 </div>

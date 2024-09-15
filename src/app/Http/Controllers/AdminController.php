@@ -12,7 +12,7 @@ class AdminController extends Controller
     //ページネーション設定
     public function index()
     {
-        $contacts = Contact::paginate(7);
+        $contacts = Contact::paginate(5);
         return view('admin', compact('contacts'));
     }
 
@@ -81,7 +81,7 @@ class AdminController extends Controller
                     ->orWhere('last_name', $input)
                     ->orWhere('email', $input);
             })
-            ->paginate(7);
+            ->paginate(5);
 
         $param = [
             'input' => $input,
