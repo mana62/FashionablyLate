@@ -18,24 +18,39 @@ class MyContactController extends Controller
     public function confirm(MyContactRequest $request)
     {
         $contact = $request->all();
-        $request->session()->put('contact', $contact); // セッションにデータを保存
+
+        $category = Category::find($contact['category_id']);
+        $contact['category_name'] = $category ? $category->content : 'カテゴリが見つかりません';
+
+        $request->session()->put('contact', $contact); //セッションにデータを保存
         return view('confirm', compact('contact'));
     }
 
     public function showConfirm(Request $request)
     {
-        // セッションからデータを取得
+        //セッションからデータを取得
         $contact = $request->session()->get('contact');
 
-        // 確認画面を表示
+        //確認画面を表示
         return view('thanks', ['contact' => $contact]);
     }
 
     public function store(MyContactRequest $request)
     {
-        $contact = $request->session()->get('contact'); // セッションからデータを取得
-        Contact::create($contact); // データベースに保存
-        return redirect()->route('thanks'); // Thanksページにリダイレクト
+        $contact = $request->session()->get('contact');
+        Contact::create([
+            'category_id' => $contact['category_id'],
+            'first_name' => $contact['first_name'],
+            'last_name' => $contact['last_name'],
+            'gender' => $contact['gender'],
+            'email' => $contact['email'],
+            'tell' => $contact['tell'],
+            'address' => $contact['address'],
+            'building' => $contact['building'],
+            'detail' => $contact['detail'],
+
+        ]);
+        return redirect()->route('thanks');
     }
 
     public function show()

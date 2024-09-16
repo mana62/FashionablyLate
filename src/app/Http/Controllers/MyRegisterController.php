@@ -18,7 +18,7 @@ class MyRegisterController extends Controller
 
     public function register(MyRegisterRequest $request)
     {
-        $user = $this->create($request->validated()); // バリデーションを通過したデータのみ取得
+        $user = $this->create($request->validated()); //バリデーションを通過したデータのみ取得
         return redirect()->route('auth.login');
     }
 
@@ -42,7 +42,7 @@ class MyRegisterController extends Controller
         if (Auth::attempt($certifications)) {
             return redirect()->route('admin');
         }
-        return back()->withErrors(['login' => 'メールアドレスまたはパスワードが違います'])->withInput(); // 認証失敗時
+        return back()->withErrors(['login' => 'メールアドレスまたはパスワードが違います'])->withInput(); //認証失敗時
     }
 }
 

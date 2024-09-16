@@ -53,3 +53,5 @@ Route::post('/store', [MyContactController::class, 'store'])->name('store');
 
 //thanksページの表示
 Route::get('/thanks', [MyContactController::class, 'show'])->name('thanks');
+Auth::routes();
+

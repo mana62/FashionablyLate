@@ -36,7 +36,7 @@ class AdminController extends Controller
                     $contact->tell,
                     $contact->address,
                     $contact->building,
-                    $contact->category,
+                    $contact->category ? $contact->category->content : 'カテゴリが見つかりません',
                     $contact->detail,
                 ]);
             }

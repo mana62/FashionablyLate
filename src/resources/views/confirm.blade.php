@@ -38,7 +38,8 @@
                     </tr>
                     <tr class="table-content__items">
                         <th class="table-content__items-header">お問い合わせの種類</th>
-                        <td class="table-content__items-content">{{ $contact['category_id'] }} </td>
+                        <td class="table-content__items-content">{{ \App\Models\Category::find($contact['category_id'])->content ?? 'カテゴリが見つかりません' }}</td>
+                    </td>
                     </tr>
                     <tr class="table-content__items">
                         <th class="table-content__items-header">お問い合わせ内容</th>

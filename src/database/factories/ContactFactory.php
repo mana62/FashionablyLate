@@ -15,7 +15,7 @@ class ContactFactory extends Factory
     protected $model = Contact::class;
     public function definition()
     {
-
+        $faker = \Faker\Factory::create('ja_JP');
 
         return [
             'category_id' => $this->faker->numberBetween(1, 5),
@@ -26,7 +26,7 @@ class ContactFactory extends Factory
             'tell' => $this->faker->phoneNumber(),
             'address' => $this->faker->streetAddress(),
             'building' => $this->faker->word(). 'ビル',
-            'detail' => $this->faker->text(120),
+            'detail' => $this->faker->realText(100),
         ];
     }
 }
