@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Doctrine\DBAL\Types\Type;
+use Illuminate\Support\Facades\DB;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -14,7 +15,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        if (DB::getDoctrineSchemaManager() instanceof \Doctrine\DBAL\Schema\AbstractSchemaManager) {
+            DB::getDoctrineSchemaManager()->getDatabasePlatform()->registerDoctrineTypeMapping('tinyinteger', 'smallint');
+        }
     }
 
     /**
@@ -24,9 +27,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (!Type::hasType('tinyInteger')) {
-            Type::addType('tinyInteger', \Doctrine\DBAL\Types\IntegerType::class);
 
-        }
     }
 }

@@ -14,6 +14,7 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
+        $faker = \Faker\Factory::create('ja_JP');
 
         return [
             'name' => $this->faker->name(),
